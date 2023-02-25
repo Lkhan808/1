@@ -29,9 +29,9 @@ def binary_search(x,my_list):
                 last = mid - 1
     else:
         if result == True:
-            print(f'Элемент найден!\n{pos}')
+            print(f' найдено по индексу: {pos}')
         else:
-            print(f'Элемент не найден!')
+            print(f' не найдено')
 dataa=[1,2,3,4,5,6,7,8,9,10]
 binary_search(8, dataa)
 
