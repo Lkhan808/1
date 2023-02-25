@@ -1,39 +1,45 @@
-def bubbleSort(array):
-    # loop to access each array element
-    for i in range(len(array)):
+def bubble_sort(array):
+    n=array
+    for i in range(len(n)):
+        for j in range(len(n)-1):
+            if n[j]>n[j+1]:
+                n[j],n[j+1]=n[j+1], n[j]
+    return array
 
-        # loop to compare array elements
-        for j in range(0, len(array) - i - 1):
+data=[12,34,5,87]
+print(bubble_sort(data))
 
-            # compare two adjacent elements
-            # change > to < to sort in descending order
-            if array[j] > array[j + 1]:
-                # swapping elements if elements
-                # are not in the intended order
-                temp = array[j]
-                array[j] = array[j + 1]
-                array[j + 1] = temp
 
-#data = [-2, 45, 0, 11, -9]
-
-#bubbleSort(data)
-
-#print('Sorted Array:')
-#print(data)
-
-def binarySearch(array, x, low, high):
-    while low <= high:
-        mid = low + (high - low)//2
-        if array[mid] == x:
-            return mid
-        elif array[mid] < x:
-            low = mid + 1
+def binary_search(x,my_list):
+    n = max(my_list)
+    result = False
+    first = 0
+    last = n - 1
+    while(first<last):
+        mid = (first + last) // 2
+        if x == my_list[mid]:
+            first = mid
+            last = first
+            result = True
+            pos = mid
         else:
-            high = mid - 1
-    return x
-#array = [3, 4, 5, 6, 7, 8, 9]
-#x = 7
-#print(binarySearch(array, x, 0, len(array)-1))
+            if x > my_list[mid]:
+                first = mid + 1
+            else:
+                last = mid - 1
+    else:
+        if result == True:
+            print(f'Элемент найден!\n{pos}')
+        else:
+            print(f'Элемент не найден!')
+dataa=[1,2,3,4,5,6,7,8,9,10]
+binary_search(8, dataa)
+
+
+
+
+
+
 
 
 
